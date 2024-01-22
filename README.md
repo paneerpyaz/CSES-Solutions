@@ -1,5 +1,9 @@
 # CSES Problem Set Solutions
 
+**Author:** Siddhant Rohila
+<br>
+**Date:** January 2024
+
 Welcome to the repository containing solutions to the CSES Problem Set in C++. This repository is dedicated to providing solutions to the introductory problems, sorting and searching, and dynamic programming sections of the CSES Problem Set. The solutions are written in C++ and aim to serve as a helpful resource for anyone looking to understand and implement solutions to these problems.
 
 ## Introductory Problems
