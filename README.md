@@ -5,7 +5,7 @@ Welcome to the repository containing solutions to the CSES Problem Set in C++. T
 ## Introductory Problems
 This section requires basic knowledge of C++ , some high school math including combinatorics and stuff. They are purely logic based with less pre-requisites and are recommended for beginners in competitive programming. Learning C++ STL is a good start.
 
-## Sorting and Searhing
+## Sorting and Searching
 This section is one of the best collection of problems that teaches you many concepts in limited number of problems. Initially, it may look out of your comfort zone, but that is what helps in your progress :)
 This section requires the following concepts :
 - Sorting
