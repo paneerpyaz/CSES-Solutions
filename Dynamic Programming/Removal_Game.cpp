@@ -29,12 +29,7 @@ const int MOD2 = 1e9+7;
 int n;
 vll a;
 int dp[5005][5005];
- 
-int rec(int i , int j){//say the current state is at i from beginning and j from ending
-//this function will return the value of x-y at this state
-//it actually means i+n-1-j chances are completed
-//if this is even, taro ki chance hai, else jiro ki
-//if taro ki chance, x-y must be maxi else mini
+int rec(int i , int j){
     int chance = i+n-1-j;
     if(j == i){
         if(chance%2){
@@ -49,12 +44,10 @@ int rec(int i , int j){//say the current state is at i from beginning and j from
     }
     int ans;
     if(chance%2){
-        //jiro chalega, minimize the score x-y
         ans = rec(i+1,j)-a[i];
         ans = min(ans,rec(i,j-1)-a[j]);
     }
     else{
-        //taro chalega, maximize the score x-y
         ans = rec(i+1,j)+a[i];
         ans = max(ans,rec(i,j-1)+a[j]);
     }
