@@ -49,12 +49,6 @@ void samadhaan(){
             }
         }
     }
-    // it(i,1,a+1){
-    //     it(j,1,b+1){
-    //         cout << dp[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
     cout << dp[a][b] << endl;
  
 }
