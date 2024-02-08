@@ -34,13 +34,12 @@ void samadhaan(){
             if(a[i][j] != '*'){
                 if(a[i-1][j] != '*' && i>=1){
                     dp[i][j] += dp[i-1][j];
-                         dp[i][j]%=MOD2;
+                    dp[i][j]%=MOD2;
                 }
                 if(a[i][j-1] != '*' && j>=1){
                     dp[i][j] += dp[i][j-1];
-                         dp[i][j]%=MOD2;
+                    dp[i][j]%=MOD2;
                 }
-           
             }
         }
     }

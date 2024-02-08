@@ -15,7 +15,7 @@ int main() {
       dp[i][j] = dp[i-1][j];
       int left = j-x[i-1];
       if (left >= 0) {
-	(dp[i][j] += dp[i][left]) %= mod;
+	      (dp[i][j] += dp[i][left]) %= mod;
       }
     }
   }

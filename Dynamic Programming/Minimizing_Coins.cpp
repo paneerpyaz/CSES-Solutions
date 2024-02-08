@@ -24,7 +24,7 @@ void samadhaan(){
     input(c);
     vector<int>dp(x+1,INT_MAX);
     dp[0] = 0;
-    it(i,0,n){ //dp[i]=Number of ways to get sum i
+    it(i,0,n){
         it(j,0,x+1){
         if(j >= c[i]) dp[j] = min(dp[j],dp[j-c[i]]+1);
         }

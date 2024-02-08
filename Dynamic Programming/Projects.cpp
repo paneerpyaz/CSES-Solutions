@@ -27,43 +27,48 @@ typedef tree<int, null_type, less_equal<int>, rb_tree_tag, tree_order_statistics
  
 const int MOD1 = 998244353;
 const int MOD2 = 1e9+7;
-
-long long binpow(long long a, long long b, long long m) {
-    a %= m;
-    long long res = 1;
-    while (b > 0) {
-        if (b & 1)
-            res = res * a % m;
-        a = a * a % m;
-        b >>= 1;
+ 
+int dp[200005];
+ 
+int recc(int project_number,vector<pair<int,pair<int,int>>>&a,int n){
+  if(project_number == n+1){
+    return 0;
+  }
+  
+  if(dp[project_number] != -1){
+    return dp[project_number];
+  }
+  int ans = recc(project_number+1,a,n);
+  int low = project_number+1;
+  int high = n;
+  int new_project_number = n+1;
+  int mid;
+  while(low <= high){
+    mid = (high + low) / 2;
+    if(a[mid].F > a[project_number].S.F){
+      new_project_number = mid;
+      high = mid - 1;
     }
-    return res;
-}
-vector<vector<int>> dp(501,vector<int>(125251,-1));
-int recc(int state,int sum,int n){
-  if(state==n+1){
-    if(sum== (n*(n+1))/4){return 1;}
     else{
-      return 0;
+      low = mid + 1;
     }
   }
-  if(dp[state][sum]!=-1) return dp[state][sum];
-  int ans = 0;
-  ans = recc(state+1,sum+state,n)%MOD2;
-  ans = (ans + recc(state+1,sum,n))%MOD2;
-  return dp[state][sum] = ans;
+  int reward = a[project_number].S.S;
+  ans = max(ans , recc(new_project_number,a,n)+reward);
+ 
+  return dp[project_number] = ans;
 }
  
 void samadhaan(){
   int n;
-  cin>>n;
-  if(((n*(n+1))/2)&1){
-    cout<<0<<'\n';
-    return;
+  cin >> n;
+  memset(dp,-1,sizeof(dp));
+  vector<pair<int,pair<int,int>>>a(n+1);
+  for(int i = 1 ; i <= n ; i++){
+    cin >> a[i].F >> a[i].S.F >> a[i].S.S;
   }
- 
-  int x = recc(1,0,n);
-  cout<<(x*binpow(2,MOD2-2,MOD2))%MOD2<<endl;
+  sort(all(a));
+  cout << recc(1,a,n) << endl;
 } 
  
 signed main(){
@@ -75,3 +80,7 @@ signed main(){
   }
   return 0;
 }
+ 
+ 
+ 
+ 
