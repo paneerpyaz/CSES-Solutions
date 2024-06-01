@@ -26,7 +26,7 @@ void solve(){
   set<vector<int>>s;
   vector<vector<int>>dp(n+1,vector<int>(2,1e16));
   dp[1][0] = 0;
-  dp[1][1] = 1;
+  dp[1][1] = 0;
   s.insert({0,1,1});
   vector<int>par(n+1);
   vector<bool>vis(n+1,false);
