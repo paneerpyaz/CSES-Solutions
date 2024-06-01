@@ -40,12 +40,12 @@ void solve(){
   bool f = false;
   int node =-1;
   for(auto it : g) {
-		int u = it[0];
-		int v = it[1];
-		int wt = it[2];
-		if (dis[u] + wt < dis[v]) {
-        node = u;
-        par[v] = u;
+	int u = it[0];
+	int v = it[1];
+	int wt = it[2];
+		if (dis[u] + wt < dis[v]){
+      node = u;
+      par[v] = u;
 			break;
 		}
 	}
